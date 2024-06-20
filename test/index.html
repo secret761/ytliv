@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Link Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        h1{
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        input {
+            background-color: #333333;
+            color: #ffffff;
+            font-size: 1.6rem;
+        }
+        button {
+            background-color: #6200ee;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 1.6rem;
+            padding: 10px 50px;
+        }
+        button:hover {
+            background-color: #3700b3;
+        }
+        a {
+            color: #bb86fc;
+        }
+        @media (max-width: 600px) {
+            input, button {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Link Generator</h1>
+    <input type="text" id="userInput" placeholder="Enter text" onkeydown="handleKeyDown(event)">
+    <button onclick="generateLink()">Play</button>
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
