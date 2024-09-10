@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JioTV Go</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        overflow-y: hidden;
+      }
+      #jiotv_go_player{
+        height: 100vh;
+        width: 100vw;
+        background-color: black;
+      }
+    </style>
+    <link rel="stylesheet" href="./static/flowplayer.css" />
+    <script src="./static/flowplayer.min.js"></script>
+    <script src="./static/hls.min.js"></script>
+    <script src="./static/qsel.min.js"></script>
+    <script src="./static/asel.min.js"></script>
+    <script src="./static/keyboard.min.js"></script>
+  </head>
+  <script>
+    // Get the ID from the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var id = urlParams.get('id');
+    
+    // Update the title with the ID
+    document.getElementById('pageTitle').innerText = id + " | Sony Liv";
+    </script>
+
+  <body>
+    <div id="jiotv_go_player"></div>
+    <script>
+        // Function to get URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        var id = getUrlParameter('id');
+        
+        // Load the m1.json file and get the video data by ID
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText);
+                var videoData = data.find(video => video.id === id);
+
+                var player = flowplayer("#jiotv_go_player", {
+         src: videoData.link,
+        auto_orient: true,
+        live: true,
+        seekable: true,
+        retry: true,
+        autplay: true,
+        qsel: {},
+        asel: {},
+        ui: flowplayer.ui.USE_THIN_CONTROLBAR,
+      });
+      player.on(flowplayer.events.FULLSCREEN_ENTER, (e) => {
+        // rotate to landscape on mobile devices
+        if (screen.orientation) {
+          screen.orientation.lock("landscape").catch((e) => {
+            if (e.name === "NotSupportedError") {
+              // ignore
+            } else {
+              console.error(e);
+            }
+          });
+        }
+      });
+      player.on(flowplayer.events.FULLSCREEN_EXIT, (e) => {
+        // release orientation lock on mobile devices
+        if (screen.orientation) {
+          screen.orientation.unlock();
+        }
+      });
+            }
+        };
+        xhr.open('GET', 'discovery.json', true);
+        xhr.send();
+    </script>
+  </body>
+</html>

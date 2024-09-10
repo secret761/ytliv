@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JioTV Go</title>
+
+    <link href="/static/tailwind.css" rel="stylesheet" />
+  </head>
+  <script>
+    // Function to generate HTML from JSON data
+    async function generateHtmlFromJson(url) {
+        try {
+            const response = await fetch(url);
+            const jsonData = await response.json();
+            if (!jsonData) {
+                console.error('No JSON data available');
+                return;
+            }
+
+            const listContainer = document.getElementById('listContainer');
+            jsonData.forEach(function(item) {
+                const anchor = document.createElement('a');
+                anchor.href = `Play.html?id=${item.id}`; // Assuming the JSON contains the URL for each item
+
+                const cardDiv = document.createElement('div');
+                cardDiv.classList.add('box1'); // Add the appropriate class
+
+                const card = document.createElement('div');
+                card.classList.add('card', 'w-40', 'bg-gray-100', 'rounded-xl', 'bg-base-100', 'shadow-lg', 'h-48', 'mb-4', 'flex', 'flex-col');
+
+                const image = document.createElement('img');
+                image.src = item.logo; // Assuming the JSON contains the image URL for each item
+                image.classList.add('h-28', 'mt-5', 'm-auto', 'opacity-100');
+
+                const title = document.createElement('h2');
+                title.classList.add('text-center', 'text-sm', 'font-bold');
+                title.textContent = item.name; // Assuming the JSON contains the title for each item
+
+                const description = document.createElement('div');
+                description.classList.add('mb-5', 'opacity-100');
+                const descriptionText = document.createElement('p');
+                descriptionText.classList.add('text-xs', 'text-center');
+                descriptionText.textContent = item.group; // Assuming the JSON contains the description for each item
+
+                description.appendChild(title);
+                description.appendChild(descriptionText);
+
+                card.appendChild(image);
+                card.appendChild(description);
+                anchor.appendChild(card);
+                cardDiv.appendChild(anchor);
+                listContainer.appendChild(cardDiv);
+            });
+        } catch (error) {
+            console.error('Error fetching or parsing JSON:', error);
+        }
+    }
+
+    // Call the function with the URL of your JSON data
+    generateHtmlFromJson('discovery.json');
+</script>
+
+  <body>
+    <div class="navbar bg-base-100 px-4">
+      <div class="navbar-start">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125z"
+          />
+        </svg>
+        <a href="/" class="btn btn-ghost text-xl text-error">JioTV Go</a>
+      </div>
+      <div class="navbar-end gap-4">
+        <label class="swap swap-rotate">
+          <input type="checkbox" onclick="toggleTheme()" />
+
+          <svg
+            id="sunIcon"
+            class="swap-on fill-current w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+            />
+          </svg>
+
+          <svg
+            id="moonIcon"
+            class="swap-off fill-current w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+            />
+          </svg>
+        </label>
+
+        <button
+          onclick="window.location.href='/logout'"
+          class="btn btn-outline btn-error btn-md"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+
+    <div class="container mx-auto">
+      <div class="overflow-x-auto">
+        <div
+          id="portexe-search-root"
+          class="w-full px-2 grid grid-cols-1 gap-2 sm:grid-cols-5 items-center justify-between bg-base-100"
+        >
+          <input
+            id="portexe-search-input"
+            type="text"
+            placeholder="Search channels here"
+            class="input input-bordered input-primary input-md w-full rounded-xl col-span-3 sm:col-span-1"
+          />
+          <select
+            id="portexe-quality-select"
+            class="select select-primary select-sm sm:select-md w-full max-w-auto sm:max-w-xs sm:w-auto rounded-xl"
+            onchange="onQualityChange(this)"
+          >
+            <option value="auto">Quality (Auto)</option>
+
+            <option value="high">High</option>
+
+            <option value="low">Low</option>
+
+            <option value="medium">Medium</option>
+          </select>
+          <select
+            id="portexe-category-select"
+            class="select select-primary select-sm sm:select-md w-full max-w-auto sm:max-w-xs sm:w-auto rounded-xl"
+          >
+            <option value="0">All Categories</option>
+
+            <option value="5">Entertainment</option>
+
+            <option value="6">Movies</option>
+
+            <option value="7">Kids</option>
+
+            <option value="8">Sports</option>
+
+            <option value="9">Lifestyle</option>
+
+            <option value="10">Infotainment</option>
+
+            <option value="12">News</option>
+
+            <option value="13">Music</option>
+
+            <option value="15">Devotional</option>
+
+            <option value="16">Business</option>
+
+            <option value="17">Educational</option>
+
+            <option value="18">Shopping</option>
+
+            <option value="19">JioDarshan</option>
+          </select>
+          <select
+            id="portexe-language-select"
+            class="select select-primary select-sm sm:select-md w-full max-w-auto sm:max-w-xs sm:w-auto rounded-xl"
+          >
+            <option value="0">All Languages</option>
+
+            <option value="1">Hindi</option>
+
+            <option value="2">Marathi</option>
+
+            <option value="3">Punjabi</option>
+
+            <option value="4">Urdu</option>
+
+            <option value="5">Bengali</option>
+
+            <option value="6">English</option>
+
+            <option value="7">Malayalam</option>
+
+            <option value="8">Tamil</option>
+
+            <option value="9">Gujarati</option>
+
+            <option value="10">Odia</option>
+
+            <option value="11">Telugu</option>
+
+            <option value="12">Bhojpuri</option>
+
+            <option value="13">Kannada</option>
+
+            <option value="14">Assamese</option>
+
+            <option value="15">Nepali</option>
+
+            <option value="16">French</option>
+
+            <option value="18">Other</option>
+          </select>
+          <button
+            id="portexe-search-button"
+            class="btn btn-primary btn-sm sm:btn-md w-full sm:w-auto rounded-xl col-span-3 sm:col-span-1"
+          >
+            Apply                         
+          </button>
+        </div>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4"
+        >
+         
+
+        <!-- ======================================================================================= -->
+        <a
+        href="https://secret761.github.io/ytliv/allinone/live/sony-liv/"
+        class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+      >
+        <div class="flex flex-col items-center p-2 sm:p-4">
+          <img
+            src="/jtvimage/Rai_Vs_Rai.png"
+            loading="lazy"
+            alt="Sony LIV Exclusive"
+            class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+          />
+          <span class="text-lg font-bold mt-2">Sony LIV Exclusive</span>
+          <div class="absolute top-2 right-2">
+            
+            <div class="badge badge-primary">
+               HD
+            </div>
+            
+          </div>
+        </div>
+      </a>
+
+
+        <a
+        href="./Play.html?id=1"
+        class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+      >
+        <div class="flex flex-col items-center p-2 sm:p-4">
+          <img
+            src="/jtvimage/Animal_Planet_HD.png"
+            loading="lazy"
+            alt="Animal Planet HD World"
+            class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+          />
+          <span class="text-lg font-bold mt-2">Animal Planet HD World</span>
+          <div class="absolute top-2 right-2">
+            
+            <div class="badge badge-primary">
+               HD
+            </div>
+            
+          </div>
+        </div>
+      </a>
+
+      <a
+      href="./Play.html?id=2"
+      class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+    >
+      <div class="flex flex-col items-center p-2 sm:p-4">
+        <img
+          src="/jtvimage/Discovery_HD_World.png"
+          loading="lazy"
+          alt="Discovery HD World"
+          class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+        />
+        <span class="text-lg font-bold mt-2">Discovery HD World</span>
+        <div class="absolute top-2 right-2">
+          
+          <div class="badge badge-primary">
+             HD
+          </div>
+          
+        </div>
+      </div>
+    </a>
+
+    <a
+    href="./Play.html?id=3"
+    class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+  >
+    <div class="flex flex-col items-center p-2 sm:p-4">
+      <img
+        src="/jtvimage/Discovery_Kids_2.png"
+        loading="lazy"
+        alt="Discovery Kids 2"
+        class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+      />
+      <span class="text-lg font-bold mt-2">Discovery Kids</span>
+      <div class="absolute top-2 right-2">
+        
+        <div class="badge badge-outline badge-primary">
+          SD
+        </div>
+        
+      </div>
+    </div>
+  </a>
+
+    <a
+    href="./Play.html?id=14"
+    class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+  >
+    <div class="flex flex-col items-center p-2 sm:p-4">
+      <img
+        src="/jtvimage/And_TV_HD.png"
+        loading="lazy"
+        alt="Discovery Kids 2"
+        class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+      />
+      <span class="text-lg font-bold mt-2">And TV HD</span>
+      <div class="absolute top-2 right-2">
+        
+        <div class="badge badge-outline badge-primary">
+          SD
+        </div>
+        
+      </div>
+    </div>
+  </a>
+    <a
+    href="./Play.html?id=15"
+    class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+  >
+    <div class="flex flex-col items-center p-2 sm:p-4">
+      <img
+        src="/jtvimage/And_TV.png"
+        loading="lazy"
+        alt="Discovery Kids 2"
+        class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+      />
+      <span class="text-lg font-bold mt-2">And TV</span>
+      <div class="absolute top-2 right-2">
+        
+        <div class="badge badge-outline badge-primary">
+          SD
+        </div>
+        
+      </div>
+    </div>
+  </a>
+    <a
+    href="./Play.html?id=17"
+    class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+  >
+    <div class="flex flex-col items-center p-2 sm:p-4">
+      <img
+        src="https://www.epicon.in/img/gubbare-logo.png"
+        loading="lazy"
+        alt="Discovery Kids 2"
+        class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+      />
+      <span class="text-lg font-bold mt-2">And TV</span>
+      <div class="absolute top-2 right-2">
+        
+        <div class="badge badge-outline badge-primary">
+          SD
+        </div>
+        
+      </div>
+    </div>
+  </a>
+    <a
+    href="./Play.html?id=18"
+    class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+  >
+    <div class="flex flex-col items-center p-2 sm:p-4">
+      <img
+        src="./jtvimage/Pogo_Hindi.png"
+        loading="lazy"
+        alt="Discovery Kids 2"
+        class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+      />
+      <span class="text-lg font-bold mt-2">And TV</span>
+      <div class="absolute top-2 right-2">
+        
+        <div class="badge badge-outline badge-primary">
+          SD
+        </div>
+        
+      </div>
+    </div>
+  </a>
+
+
+
+  <a
+  href="./Play.html?id=16"
+  class="card border border-primary shadow-lg hover:shadow-xl hover:bg-base-300 transition-all duration-200 ease-in-out scale-100 hover:scale-105"
+>
+  <div class="flex flex-col items-center p-2 sm:p-4">
+    <img
+      src="/jtvimage/Sarv_Dharam_Sangam.png"
+      loading="lazy"
+      alt="Sarv Dharam Sangam"
+      class="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 rounded-full bg-gray-200"
+    />
+    <span class="text-lg font-bold mt-2">Sarv Dharam Sangam</span>
+    <div class="absolute top-2 right-2">
+      
+      <div class="badge badge-outline badge-primary">
+        SD
+      </div>
+      
+    </div>
+  </div>
+</a>
+
+  
+
+
+
+
+
+        <!-- ======================================================================================= -->
+
+        
+
+
+        </div>
+        <button
+          class="btn btn-primary fixed bottom-4 right-4 px-4 rounded-full shadow-lg focus:outline-none flex flex-row gap-2"
+          onclick="scrollToTop()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+          <span class="hidden sm:block">Search</span>
+        </button>
+        <script src="/static/channels.js"></script>
+      </div>
+    </div>
+
+    <dialog
+      id="login_modal_usrn_passwd"
+      class="modal modal-bottom sm:modal-middle"
+    >
+      <form method="dialog" class="modal-box">
+        <h3 class="font-bold text-lg">Login</h3>
+        <div class="flex flex-col gap-2">
+          <label for="username" class="label">Username / Mobile Number</label>
+          <input
+            id="username"
+            type="text"
+            placeholder="9876543210"
+            class="input input-bordered input-primary w-full"
+          />
+          <label for="password" class="label">Password</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="********"
+            class="input input-bordered input-primary w-full"
+          />
+          <a
+            href="https://www.jio.com/selfcare/signup/forgot-password"
+            target="_blank"
+            class="text-sm link link-error text-end"
+            >Forgot Password?</a
+          >
+          <button onclick="loginClick()" class="btn btn-primary">Login</button>
+          <button class="btn btn-sm btn-ghost">Login with OTP</button>
+        </div>
+      </form>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+    <dialog id="login_modal" class="modal modal-bottom sm:modal-middle">
+      <form method="dialog" class="modal-box">
+        <h3 class="font-bold text-lg">Login</h3>
+        <div class="flex flex-col gap-2">
+          <label for="username" class="label">Jio Mobile Number</label>
+          <input
+            id="number"
+            type="tel"
+            class="input input-bordered"
+            placeholder="9876543210"
+            pattern="[0-9]{10}"
+            minlength="10"
+            maxlength="10"
+          />
+          <button onclick="loginOTPClick()" class="btn btn-primary">
+            Login
+          </button>
+          <button
+            onclick="login_modal_usrn_passwd.showModal()"
+            class="btn btn-sm btn-ghost"
+          >
+            Login with Password
+          </button>
+        </div>
+      </form>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <dialog id="verify_otp_modal" class="modal modal-bottom sm:modal-middle">
+      <form method="dialog" class="modal-box">
+        <h3 class="font-bold text-lg">Verify OTP</h3>
+        <div class="flex flex-col gap-2">
+          <label for="otp" class="label">OTP</label>
+          <input
+            id="otp"
+            type="number"
+            class="input input-bordered"
+            placeholder="543210"
+            max="999999"
+            min="100000"
+            required
+          />
+          <button onclick="loginOTPVerifyClick()" class="btn btn-primary">
+            Verify
+          </button>
+        </div>
+      </form>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <script>
+      console.log("You have already logged in");
+    </script>
+
+    <script src="/static/index.js"></script>
+    <script src="/static/common.js"></script>
+
+    <footer class="footer items-center p-4 bg-inherit text-inherit-content">
+      <aside class="items-center grid-flow-col">
+        <svg
+          width="36"
+          height="36"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125z"
+          />
+        </svg>
+        <p>
+          JioTV Go.
+          <a href="https://github.com/rabilrbl/jiotv_go" target="_blank"
+            >A Free Open Source JioTV Client.</a
+          >
+        </p>
+      </aside>
+      <nav
+        class="grid-flow-col items-center gap-4 md:place-self-center md:justify-self-end sm:mr-32"
+      >
+        <a href="https://github.com/rabilrbl/jiotv_go" target="_blank">
+          <svg
+            width="36"
+            height="36"
+            xmlns="http://www.w3.org/2000/svg"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            viewBox="0 0 100 100"
+            class="fill-current"
+          >
+            <path
+              d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+            />
+          </svg>
+        </a>
+        <a href="https://telegram.me/jiotv_go" target="_blank">
+          <svg
+            class="fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 50 50"
+          >
+            <linearGradient
+              id="BiF7D16UlC0RZ_VqXJHnXa_oWiuH0jFiU0R_gr1"
+              x1="9.858"
+              x2="38.142"
+              y1="9.858"
+              y2="38.142"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#33bef0"></stop>
+              <stop offset="1" stop-color="#0a85d9"></stop>
+            </linearGradient>
+            <path
+              fill="url(#BiF7D16UlC0RZ_VqXJHnXa_oWiuH0jFiU0R_gr1)"
+              d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"
+            ></path>
+            <path
+              d="M10.119,23.466c8.155-3.695,17.733-7.704,19.208-8.284c3.252-1.279,4.67,0.028,4.448,2.113	c-0.273,2.555-1.567,9.99-2.363,15.317c-0.466,3.117-2.154,4.072-4.059,2.863c-1.445-0.917-6.413-4.17-7.72-5.282	c-0.891-0.758-1.512-1.608-0.88-2.474c0.185-0.253,0.658-0.763,0.921-1.017c1.319-1.278,1.141-1.553-0.454-0.412	c-0.19,0.136-1.292,0.935-1.745,1.237c-1.11,0.74-2.131,0.78-3.862,0.192c-1.416-0.481-2.776-0.852-3.634-1.223	C8.794,25.983,8.34,24.272,10.119,23.466z"
+              opacity=".05"
+            ></path>
+            <path
+              d="M10.836,23.591c7.572-3.385,16.884-7.264,18.246-7.813c3.264-1.318,4.465-0.536,4.114,2.011	c-0.326,2.358-1.483,9.654-2.294,14.545c-0.478,2.879-1.874,3.513-3.692,2.337c-1.139-0.734-5.723-3.754-6.835-4.633	c-0.86-0.679-1.751-1.463-0.71-2.598c0.348-0.379,2.27-2.234,3.707-3.614c0.833-0.801,0.536-1.196-0.469-0.508	c-1.843,1.263-4.858,3.262-5.396,3.625c-1.025,0.69-1.988,0.856-3.664,0.329c-1.321-0.416-2.597-0.819-3.262-1.078	C9.095,25.618,9.075,24.378,10.836,23.591z"
+              opacity=".07"
+            ></path>
+            <path
+              fill="#fff"
+              d="M11.553,23.717c6.99-3.075,16.035-6.824,17.284-7.343c3.275-1.358,4.28-1.098,3.779,1.91	c-0.36,2.162-1.398,9.319-2.226,13.774c-0.491,2.642-1.593,2.955-3.325,1.812c-0.833-0.55-5.038-3.331-5.951-3.984	c-0.833-0.595-1.982-1.311-0.541-2.721c0.513-0.502,3.874-3.712,6.493-6.21c0.343-0.328-0.088-0.867-0.484-0.604	c-3.53,2.341-8.424,5.59-9.047,6.013c-0.941,0.639-1.845,0.932-3.467,0.466c-1.226-0.352-2.423-0.772-2.889-0.932	C9.384,25.282,9.81,24.484,11.553,23.717z"
+            ></path>
+          </svg>
+        </a>
+      </nav>
+    </footer>
+  </body>
+</html>
