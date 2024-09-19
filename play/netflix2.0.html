@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tataplay Live</title>
+  <link rel="stylesheet" href="./player.css">
+  <style>
+    #player {
+      position: absolute;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .playback-speed {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .playback-speed select {
+      margin-left: 5px;
+    }
+    .playback-speed {
+  display: inline-block;
+  margin-left: -10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(./playback-speed.png);
+  position: relative;
+  background-position: right 10px center; /* Position the icon */
+  height: 40px;
+}
+
+.playback-speed select {
+  padding: 5px 0px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.playback-speed select:focus {
+  border-color: #007bff; /* Highlight color when focused */
+  outline: none; /* Remove default outline */
+}
+
+  </style>
+</head>
+
+<body>
+  <div id="player"></div>
+
+  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var maxvalue = urlParams.get('max');
+
+    const playerInstance = jwplayer("player").setup({
+      controls: true,
+      sharing: true,
+      displaytitle: true,
+      autoplay: false,
+      displaydescription: true,
+      abouttext: "Video Player By DRMLIVE",
+      aboutlink: "https://t.me/+_RiCu2cz5TkxZmU1",
+      skin: {
+        name: "netflix"
+      },
+      logo: {
+        file: "Star Sports 1 Hindi HD",
+        link: "https://t.me/+_RiCu2cz5TkxZmU1"
+      },
+      captions: {
+        color: "#FFF",
+        fontSize: 14,
+        backgroundOpacity: 0,
+        edgeStyle: "raised"
+      },
+      playlist: [{
+        title: "Star Sports 1 Hindi HD",
+        description: "You're Watching",
+        image: "Star Sports 1 Hindi HD",
+        sources: [{
+          file: "./01. Welcome to @Supreme Batch.mkv",
+          type: "dash",
+          label: "1080p",
+          default: true,
+        }]
+      }],
+      advertising: {
+        client: "vast",
+        schedule: [{
+          offset: "pre",
+          tag: ""
+        }]
+      }
+    });
+
+    playerInstance.on("ready", function () {
+      const playerContainer = playerInstance.getContainer();
+      const buttonContainer = playerContainer.querySelector(".jw-button-container");
+      const spacer = buttonContainer.querySelector(".jw-spacer");
+      const timeSlider = playerContainer.querySelector(".jw-slider-time");
+      buttonContainer.replaceChild(timeSlider, spacer);
+
+      const playbackSpeeds = [0.5, 1, 1.25, 1.5, 1.75, 2]; // Array of playback speeds
+
+      const playbackSpeedContainer = document.createElement("div");
+      playbackSpeedContainer.className = "playback-speed";
+      
+      const playbackSpeedSelect = document.createElement("select");
+
+      playbackSpeeds.forEach(speed => {
+        const option = document.createElement("option");
+        option.value = speed;
+        option.innerText = `${speed}x`;
+        playbackSpeedSelect.appendChild(option);
+      });
+
+      playbackSpeedSelect.value = 1; // Set default speed to 1x
+      playbackSpeedContainer.appendChild(playbackSpeedSelect);
+      buttonContainer.appendChild(playbackSpeedContainer);
+
+      playbackSpeedSelect.addEventListener("change", function () {
+        const newSpeed = parseFloat(playbackSpeedSelect.value);
+        playerInstance.setPlaybackRate(newSpeed);
+      });
+
+      playerInstance.on("adBlock", () => {
+        const modal = document.querySelector("div.modal");
+        modal.style.display = "flex";
+
+        document.getElementById("close").addEventListener("click", () => location.reload());
+      });
+
+      // Additional controls (rewind/forward)
+      const rewindContainer = playerContainer.querySelector(".jw-display-icon-rewind");
+      const forwardContainer = rewindContainer.cloneNode(true);
+      const forwardDisplayButton = forwardContainer.querySelector(".jw-icon-rewind");
+      forwardDisplayButton.style.transform = "scaleX(-1)";
+      forwardDisplayButton.ariaLabel = "Forward 10 Seconds";
+      const nextContainer = playerContainer.querySelector(".jw-display-icon-next");
+      nextContainer.parentNode.insertBefore(forwardContainer, nextContainer);
+      playerContainer.querySelector(".jw-display-icon-next").style.display = "none";
+
+      const rewindControlBarButton = buttonContainer.querySelector(".jw-icon-rewind");
+      const forwardControlBarButton = rewindControlBarButton.cloneNode(true);
+      forwardControlBarButton.style.transform = "scaleX(-1)";
+      forwardControlBarButton.ariaLabel = "Forward 10 Seconds";
+      rewindControlBarButton.parentNode.insertBefore(forwardControlBarButton, rewindControlBarButton.nextElementSibling);
+
+      [forwardDisplayButton, forwardControlBarButton].forEach((button) => {
+        button.onclick = () => {
+          playerInstance.seek(playerInstance.getPosition() + 10);
+        };
+      });
+    });
+  </script>
+</body>
+
+</html>
