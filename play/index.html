@@ -1,4 +1,274 @@
+
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tataplay Live</title>
+  <link rel="stylesheet" href="./player.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #player {
+      position: absolute;
+      width: 100dvw !important;
+      height: 100% !important;
+    }
+
+    .playback-speed {
+      /* margin-left: 0px; */
+      cursor: pointer;
+
+    }
+
+    .playback-speed select {
+      background-color: transparent;
+      margin-left: 5px;
+      color: white;
+      border: none;
+    }
+    option{
+
+      background-color: black;
+      border: none;
+      color: #ffffff;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .drop-area {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+
+    .upload-button {
+      position: absolute;
+      font-size: 14px;
+      top: 20px;
+      right: 20px;
+      /* background-color: #007bff; */
+      background-color: #e50914;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      opacity: .8;
+    }
+    .upload-button:hover{
+      opacity: 1;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="player"></div>
+  <div class="drop-area" id="drop-area">Drop your video file here</div>
+  <label for="file-input" class="upload-button">Upload Video</label>
+  <input type="file" id="file-input" accept="video/*">
+
+  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var maxvalue = urlParams.get('max');
+
+    const playerInstance = jwplayer("player").setup({
+      controls: true,
+      sharing: false,
+      displaytitle: true,
+      autoplay: false,
+      displaydescription: true,
+      abouttext: "Video Player By DRMLIVE",
+      aboutlink: "https://t.me/+_RiCu2cz5TkxZmU1",
+      skin: {
+        name: "netflix"
+      },
+      logo: {
+        file: "Star Sports 1 Hindi HD",
+        link: "https://t.me/+_RiCu2cz5TkxZmU1"
+      },
+      captions: {
+        color: "#FFF",
+        fontSize: 14,
+        backgroundOpacity: 0,
+        edgeStyle: "raised"
+      },
+      playlist: [{
+        title: "Star Sports 1 Hindi HD",
+        description: "You're Watching",
+        image: "Star Sports 1 Hindi HD",
+        sources: [{
+          file: maxvalue,
+          type: "dash",
+          label: "1080p",
+          default: true,
+        }]
+      }],
+      advertising: {
+        client: "vast",
+        schedule: [{
+          offset: "pre",
+          tag: ""
+        }]
+      }
+    });
+
+    const dropArea = document.getElementById('drop-area');
+    const fileInput = document.getElementById('file-input');
+
+    // Drag and drop event listeners
+    dropArea.addEventListener('dragover', (event) => {
+      event.preventDefault();
+      dropArea.style.display = 'flex'; // Show drop area
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+      dropArea.style.display = 'none'; // Hide drop area
+    });
+
+    dropArea.addEventListener('drop', (event) => {
+      event.preventDefault();
+      dropArea.style.display = 'none'; // Hide drop area
+
+      const file = event.dataTransfer.files[0];
+      if (file && file.type.startsWith('video/')) {
+        const videoURL = URL.createObjectURL(file);
+        playerInstance.load({
+          file: videoURL,
+          type: file.type,
+          label: file.name
+        });
+        playerInstance.play();
+      }
+    });
+
+    // File input change event
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file && file.type.startsWith('video/')) {
+        const videoURL = URL.createObjectURL(file);
+        playerInstance.load({
+          file: videoURL,
+          type: file.type,
+          label: file.name
+        });
+        playerInstance.play();
+      }
+    });
+
+    playerInstance.on("ready", function () {
+      const playerContainer = playerInstance.getContainer();
+      const buttonContainer = playerContainer.querySelector(".jw-button-container");
+      const spacer = buttonContainer.querySelector(".jw-spacer");
+      const timeSlider = playerContainer.querySelector(".jw-slider-time");
+      buttonContainer.replaceChild(timeSlider, spacer);
+
+      const playbackSpeeds = [0.5, 1, 1.25, 1.5, 1.75, 2]; // Array of playback speeds
+      let currentSpeedIndex = playbackSpeeds.indexOf(1); // Start at 1x speed
+
+      const playbackSpeedContainer = document.createElement("div");
+      playbackSpeedContainer.className = "playback-speed";
+
+      const playbackSpeedSelect = document.createElement("select");
+      playbackSpeeds.forEach(speed => {
+        const option = document.createElement("option");
+        option.value = speed;
+        option.innerText = `${speed}x`;
+        playbackSpeedSelect.appendChild(option);
+      });
+
+      playbackSpeedSelect.value = 1; // Set default speed to 1x
+      playbackSpeedContainer.appendChild(playbackSpeedSelect);
+      buttonContainer.appendChild(playbackSpeedContainer);
+
+      playbackSpeedSelect.addEventListener("change", function () {
+        currentSpeedIndex = playbackSpeeds.indexOf(parseFloat(playbackSpeedSelect.value));
+        playerInstance.setPlaybackRate(playbackSpeeds[currentSpeedIndex]);
+      });
+
+      // Keyboard event listeners for playback speed adjustment
+      document.addEventListener('keydown', (event) => {
+        if (event.key === '[') {
+          // Decrease playback speed
+          if (currentSpeedIndex > 0) {
+            currentSpeedIndex--;
+            playbackSpeedSelect.value = playbackSpeeds[currentSpeedIndex];
+            playerInstance.setPlaybackRate(playbackSpeeds[currentSpeedIndex]);
+          }
+        } else if (event.key === ']') {
+          // Increase playback speed
+          if (currentSpeedIndex < playbackSpeeds.length - 1) {
+            currentSpeedIndex++;
+            playbackSpeedSelect.value = playbackSpeeds[currentSpeedIndex];
+            playerInstance.setPlaybackRate(playbackSpeeds[currentSpeedIndex]);
+          }
+        }
+      });
+
+      playerInstance.on("adBlock", () => {
+        const modal = document.querySelector("div.modal");
+        modal.style.display = "flex";
+
+        document.getElementById("close").addEventListener("click", () => location.reload());
+      });
+
+      // Additional controls (rewind/forward)
+      const rewindContainer = playerContainer.querySelector(".jw-display-icon-rewind");
+      const forwardContainer = rewindContainer.cloneNode(true);
+      const forwardDisplayButton = forwardContainer.querySelector(".jw-icon-rewind");
+      forwardDisplayButton.style.transform = "scaleX(-1)";
+      forwardDisplayButton.ariaLabel = "Forward 10 Seconds";
+      const nextContainer = playerContainer.querySelector(".jw-display-icon-next");
+      nextContainer.parentNode.insertBefore(forwardContainer, nextContainer);
+      playerContainer.querySelector(".jw-display-icon-next").style.display = "none";
+
+      const rewindControlBarButton = buttonContainer.querySelector(".jw-icon-rewind");
+      const forwardControlBarButton = rewindControlBarButton.cloneNode(true);
+      forwardControlBarButton.style.transform = "scaleX(-1)";
+      forwardControlBarButton.ariaLabel = "Forward 10 Seconds";
+      rewindControlBarButton.parentNode.insertBefore(forwardControlBarButton, rewindControlBarButton.nextElementSibling);
+
+      [forwardDisplayButton, forwardControlBarButton].forEach((button) => {
+        button.onclick = () => {
+          playerInstance.seek(playerInstance.getPosition() + 10);
+        };
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -159,3 +429,4 @@
 </body>
 
 </html>
+ -->
