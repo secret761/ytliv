@@ -132,14 +132,32 @@
             height: 24px;
             margin-right: 10px;
         }
+        @media screen and (max-width: 360px) {
+    /* Your styles for screens smaller than or equal to 300px go here */
+    body {
+        margin-top: -70px;
+    }
+
+    /* Example: Change font size */
+    h1 {
+        font-size: 28px;
+    }
+    .container{
+        max-width: 300px;
+    }
+    #player{
+        height: 180px;
+    }
+}
+
     </style>
 </head>
 
 <body>
-    <a href="https://t.me/+_RiCu2cz5TkxZmU1" class="telegram-toggle">
+    <!-- <a href="https://t.me/+_RiCu2cz5TkxZmU1" class="telegram-toggle">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
         Join Telegram
-    </a>
+    </a> -->
     <div class="container">
         <h1>DRM Live Video Player</h1>
 
@@ -148,7 +166,7 @@
         <form id="videoForm" onsubmit="playVideo(event);">
             <div class="input-group">
                 <i class="fas fa-link"></i>
-                <input type="text" id="link" name="link" placeholder="Enter MPD or HLS link">
+                <input type="text" id="link" name="link" placeholder="Enter MPD or HLS link" value="https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Ddnational/default/index.m3u8">
             </div>
 
             <div class="input-group">
