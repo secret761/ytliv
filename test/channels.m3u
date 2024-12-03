@@ -1,5 +1,20 @@
 #EXTM3U
 
+#EXTINF:-1 tvg-id="CricGO-astro" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsklugwzMOLPypetTgyEmSbspxLagL-FitUg&s" group-title="BGT Live", Astro Cricket
+http://tv.cloudcdn.me:80/live.ts?channelId=128494&uid=10069&deviceMac=00:1A:79:00:27:29
+
+#EXTINF:-1 tvg-id="CricGO-astro" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsklugwzMOLPypetTgyEmSbspxLagL-FitUg&s" group-title="BGT Live", Willow Xtra
+http://tv.cloudcdn.me:80/live.ts?channelId=287&uid=10069&deviceMac=00:1A:79:00:27:29
+
+#EXTINF:-1 tvg-id="CricGO-astro" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsklugwzMOLPypetTgyEmSbspxLagL-FitUg&s" group-title="BGT Live", Fox Cricket 501‍
+http://tv.cloudcdn.me:80/live.ts?channelId=36128&uid=10069&deviceMac=00:1A:79:00:27:29
+
+#EXTINF:-1 tvg-id="1260000035" tvg-name="Star Sports 1 HD" tvg-language="English" tvg-country="IN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnTXuRWfQ8pt_uT7Q1001vRxQc52T09lBkaQ&s" tvg-chno="1766" group-title="BGT Live",Star Sports 1 FHD
+http://yourservpan.com:3050/live/vinh528@gmail.com/BhcYnrNPBM/659506.ts
+
+#EXTINF:-1 tvg-id="1260000025" tvg-name="Star Sports 1 Hindi HD" tvg-language="Hindi" tvg-country="IN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnTXuRWfQ8pt_uT7Q1001vRxQc52T09lBkaQ&s" tvg-chno="1768" group-title="BGT Live",Star Sports 1 Hindi FHD
+http://yourservpan.com:3050/live/vinh528@gmail.com/BhcYnrNPBM/659507.ts
+
 // BGT 2024 - 2025 
 #EXTINF:-1 tvg-id="CricGO-astro" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsklugwzMOLPypetTgyEmSbspxLagL-FitUg&s" group-title="BGT Live", Astro Cricket
 #KODIPROP:inputstream=inputstream.adaptive
