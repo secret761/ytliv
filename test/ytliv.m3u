@@ -4877,26 +4877,25 @@ https://denver1769.pages.dev/Discovery/tlc_hd_english.m3u8
 https://denver1769.pages.dev/Discovery/tlc_hd_hindi.m3u8
 
 
-
-# // #EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/boe8yp5TZFA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6eZu3yDt6abYaOaSNXoRymOo9Ug" group-title="FacChan",Saint MSG
-# // https://livestream.zazerconer.workers.dev/channel/UC7F_MhjSfTIp8F43lvAS4Fg.m3u8
-# // https://ythls-v3.onrender.com/channel/UC7F_MhjSfTIp8F43lvAS4Fg.m3u8?playlist=index
-
-
-# // #EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/E3tN4X7Yb78/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJz6O9J8I_-mhbdS7mXRmyYyK_JQ" group-title="FacChan",Dera Sacha Sauda
-# // https://livestream.zazerconer.workers.dev/channel/UCW0zF2PSbG_AYzoF4OEVsbA.m3u8
-# // https://ythls-v3.onrender.com/channel/UCW0zF2PSbG_AYzoF4OEVsbA.m3u8?playlist=index
+#EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/boe8yp5TZFA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6eZu3yDt6abYaOaSNXoRymOo9Ug" group-title="FacChan",Saint MSG
+https://livestream.zazerconer.workers.dev/channel/UC7F_MhjSfTIp8F43lvAS4Fg.m3u8
+https://ythls-v3.onrender.com/channel/UC7F_MhjSfTIp8F43lvAS4Fg.m3u8?playlist=index
 
 
-# // #EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/gmoB4bJqIW0/hqdefault_live.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDXzcWjspSYx_X6VdcCum59bwTzjA" group-title="FacChan",Sach Channel
-# // https://livestream.zazerconer.workers.dev/channel/UCFncf9JRkCd6miTlC_5UcFg.m3u8
-# // https://ythls-v3.onrender.com/channel/UCFncf9JRkCd6miTlC_5UcFg.m3u8
+#EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/E3tN4X7Yb78/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJz6O9J8I_-mhbdS7mXRmyYyK_JQ" group-title="FacChan",Dera Sacha Sauda
+https://livestream.zazerconer.workers.dev/channel/UCW0zF2PSbG_AYzoF4OEVsbA.m3u8
+ https://ythls-v3.onrender.com/channel/UCW0zF2PSbG_AYzoF4OEVsbA.m3u8?playlist=index
 
-# // #EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/XkaXTEPB79Q/hqdefault_live.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAJSfvIxNQvqjkDqmMYJDIuC0abQA" group-title="VOOT",DD News 
-# // https://livestream.zazerconer.workers.dev/channel/UCKwucPzHZ7zCUIf7If-Wo1g.m3u8
 
-# // #EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/Nq2wYlWFucg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCRZezLggwj_15_ZdahM2475pum4g" group-title="VOOT",Aaj Tak  
-# // https://livestream4.zazerconer.workers.dev/live/Nq2wYlWFucg.m3u8
+#EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/gmoB4bJqIW0/hqdefault_live.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDXzcWjspSYx_X6VdcCum59bwTzjA" group-title="FacChan",Sach Channel
+https://livestream.zazerconer.workers.dev/channel/UCFncf9JRkCd6miTlC_5UcFg.m3u8
+https://ythls-v3.onrender.com/channel/UCFncf9JRkCd6miTlC_5UcFg.m3u8
 
-# // #EXTINF:-1 tvg-id="143" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdvxMncJKVBj4qdeIK_LReveWf4aMo68OMxA&usqp=CAU" group-title="VOOT",Aaj Tak 2
-# // https://livestream.zazerconer.workers.dev/channel/UCt4t-jeY85JegMlZ-E5UWtA.m3u8 
+#EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/XkaXTEPB79Q/hqdefault_live.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAJSfvIxNQvqjkDqmMYJDIuC0abQA" group-title="VOOT",DD News 
+https://livestream.zazerconer.workers.dev/channel/UCKwucPzHZ7zCUIf7If-Wo1g.m3u8
+
+#EXTINF:-1 tvg-id="143" tvg-logo="https://i.ytimg.com/vi/Nq2wYlWFucg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCRZezLggwj_15_ZdahM2475pum4g" group-title="VOOT",Aaj Tak  
+https://livestream4.zazerconer.workers.dev/live/Nq2wYlWFucg.m3u8
+
+#EXTINF:-1 tvg-id="143" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdvxMncJKVBj4qdeIK_LReveWf4aMo68OMxA&usqp=CAU" group-title="VOOT",Aaj Tak 2
+https://livestream.zazerconer.workers.dev/channel/UCt4t-jeY85JegMlZ-E5UWtA.m3u8 
