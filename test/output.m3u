@@ -1,4 +1,92 @@
 #EXTM3U
+#EXTINF:-1 tvg-id="144" tvg-name="Colors HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/colors-hindi--16x9-1714557869344.jpg" group-title="Entertainment",Colors HD
+https://drmlive.in/voot/web/144.m3u8
+#EXTINF:-1 tvg-id="1370" tvg-name="Rishtey" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/collors-rishtey-live-channels-16x9-3-1642676080416-1674198105431-1697532377978.jpg" group-title="Entertainment",Rishtey
+https://drmlive.in/voot/web/1370.m3u8
+#EXTINF:-1 tvg-id="756" tvg-name="Colors Bengla HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-bangla-new-16x9-4-1649659533344.jpg" group-title="Entertainment",Colors Bengla HD
+https://drmlive.in/voot/web/756.m3u8
+#EXTINF:-1 tvg-id="757" tvg-name="Colors Kannada HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-kannada-16x9-1677754085834.jpg" group-title="Entertainment",Colors Kannada HD
+https://drmlive.in/voot/web/757.m3u8
+#EXTINF:-1 tvg-id="755" tvg-name="Colors Marathi HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-marathi-live-channels-16x9-4-6-apr-1649257093359.jpg" group-title="Entertainment",Colors Marathi HD
+https://drmlive.in/voot/web/755.m3u8
+#EXTINF:-1 tvg-id="196" tvg-name="Colors Gujarati" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-gujarati-16x9-1713269620328.jpg" group-title="Entertainment",Colors Gujarati
+https://drmlive.in/voot/web/196.m3u8
+#EXTINF:-1 tvg-id="429" tvg-name="Colors Tamil HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/ct-1644165913136.jpg" group-title="Entertainment",Colors Tamil HD
+https://drmlive.in/voot/web/429.m3u8
+#EXTINF:-1 tvg-id="198" tvg-name="Colors Oriya" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-odia-live-channels-16x9-4-1642583679866.jpg" group-title="Entertainment",Colors Oriya
+https://drmlive.in/voot/web/198.m3u8
+#EXTINF:-1 tvg-id="1158" tvg-name="Colors Infinity HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-infinity-live-channels-16x9-1642496946057.jpg" group-title="Entertainment",Colors Infinity HD
+https://drmlive.in/voot/web/1158.m3u8
+#EXTINF:-1 tvg-id="1157" tvg-name="Comedy Central HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/comedy-central-16x9-1624419769894-1663699927285.jpg" group-title="Entertainment",Comedy Central HD
+https://drmlive.in/voot/web/1157.m3u8
+#EXTINF:-1 tvg-id="785" tvg-name="Colors Super" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-super-live-channels-16x9-4-1642744939924.jpg" group-title="Entertainment",Colors Super
+https://drmlive.in/voot/web/785.m3u8
+#EXTINF:-1 tvg-id="1477" tvg-name="Colors Cineplex HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/Live-Tv-Channels-colors-cineplex-1607514413063.jpg" group-title="Movies",Colors Cineplex HD
+https://drmlive.in/voot/web/1477.m3u8
+#EXTINF:-1 tvg-id="1450" tvg-name="Colors Cineplex Superhit" tvg-logo="https://v3img.voot.com/resizeMedium,w_960,h_540/v3Storage/assets/colors-cineplex-superhit%2016x9-1648793655358.jpg" group-title="Movies",Colors Cineplex Superhit
+https://drmlive.in/voot/web/1450.m3u8
+#EXTINF:-1 tvg-id="1763" tvg-name="Colors Cineplex Bollywood" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/cineplex-1713963820848.jpeg" group-title="Movies",Colors Cineplex Bollywood
+https://drmlive.in/voot/web/1763.m3u8
+#EXTINF:-1 tvg-id="1632" tvg-name="Colors Kannada Cinema" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-kannada-cinema-16x9-1713963481807.jpg" group-title="Movies",Colors Kannada Cinema
+https://drmlive.in/voot/web/1632.m3u8
+#EXTINF:-1 tvg-id="1145" tvg-name="MTV HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/mtv-16x9-1714316345624.jpg" group-title="Music",MTV HD
+https://drmlive.in/voot/web/1145.m3u8
+#EXTINF:-1 tvg-id="753" tvg-name="MTV Beats HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/mtv-beats-live-channels-16x9-1642675874665.jpg" group-title="Music",MTV Beats HD
+https://drmlive.in/voot/web/753.m3u8
+#EXTINF:-1 tvg-id="544" tvg-name="Nick Junior" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/nick-jr-16x9-2-1626708077243.jpg" group-title="Kids",Nick Junior
+https://drmlive.in/voot/web/544.m3u8
+#EXTINF:-1 tvg-id="1226" tvg-name="Nick HD+" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/nick-hd-plus-live-channels-16x9-4-1642585145139.jpg" group-title="Kids",Nick HD+
+https://drmlive.in/voot/web/1226.m3u8
+#EXTINF:-1 tvg-id="1227" tvg-name="Nick SD" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/16x9-1719554242246.jpg" group-title="Kids",Nick SD
+https://drmlive.in/voot/web/1227.m3u8
+#EXTINF:-1 tvg-id="815" tvg-name="Sonic" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sonic-16x9-2-1626707025539.jpg" group-title="Kids",Sonic
+https://drmlive.in/voot/web/815.m3u8
+#EXTINF:-1 tvg-id="122" tvg-name="SPORTS 18 HD" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sports18_tray-1693930594270.jpg" group-title="Sports",SPORTS 18 HD
+https://drmlive.in/voot/web/122.m3u8
+#EXTINF:-1 tvg-id="1998" tvg-name="SPORTS 18 Khel" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/sports18_khel_tray-1693931658589.jpg" group-title="Sports",SPORTS 18 Khel
+https://drmlive.in/voot/web/1998.m3u8
+#EXTINF:-1 tvg-id="2000" tvg-name="JC Sports 24x7" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/jc_sports_horizontal_tray-1695561700528.jpg" group-title="Sports",JC Sports 24x7
+https://drmlive.in/voot/web/2000.m3u8
+#EXTINF:-1 tvg-id="2001" tvg-name="CricStream" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/sports_zone_cricket_horizontal-1695032322122.jpg" group-title="Sports",CricStream
+https://drmlive.in/voot/web/2001.m3u8
+#EXTINF:-1 tvg-id="190" tvg-name="CNBC Awaaz" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/cnbc-awaaz-16x9-1702387934761.jpg" group-title="Business",CNBC Awaaz
+https://drmlive.in/voot/web/190.m3u8
+#EXTINF:-1 tvg-id="490" tvg-name="CNBC Bazaar" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/whatsapp16x9-1693491956187.jpg" group-title="Business",CNBC Bazaar
+https://drmlive.in/voot/web/490.m3u8
+#EXTINF:-1 tvg-id="489" tvg-name="CNBC Tv 18" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/cnbc18-shereen-bhan-16x9-2-1693479472079.jpg" group-title="Business",CNBC Tv 18
+https://drmlive.in/voot/web/489.m3u8
+#EXTINF:-1 tvg-id="231" tvg-name="News18 India" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/IBN_7.png" group-title="News",News18 India
+https://nw18live.cdn.jio.com/bpk-tv/News18_India_NW18_MOB/output01/index.m3u8
+#EXTINF:-1 tvg-id="492" tvg-name="CNN NEWS 18" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/CNN_NEWS_18.png" group-title="News",CNN NEWS 18
+https://drmlive.in/voot/web/492.m3u8
+#EXTINF:-1 tvg-id="615" tvg-name="News18 Tamilnadu" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/News_18_Tamilnadu.png" group-title="News",News18 Tamilnadu
+https://drmlive.in/voot/web/615.m3u8
+#EXTINF:-1 tvg-id="232" tvg-name="News18 Lokmat" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/IBN_Lokmat.png" group-title="News",News18 Lokmat
+https://drmlive.in/voot/web/232.m3u8
+#EXTINF:-1 tvg-id="717" tvg-name="News18 Bangla News" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_Bangla_News.png" group-title="News",News18 Bangla News
+https://drmlive.in/voot/web/717.m3u8
+#EXTINF:-1 tvg-id="653" tvg-name="News18 Kannada News" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_Kannada_News.png" group-title="News",News18 Kannada News
+https://drmlive.in/voot/web/653.m3u8
+#EXTINF:-1 tvg-id="620" tvg-name="News18 Gujarati" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_News_Gujarati.png" group-title="News",News18 Gujarati
+https://drmlive.in/voot/web/620.m3u8
+#EXTINF:-1 tvg-id="655" tvg-name="News18 Punjab Haryana" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_Haryana_and_HP_News.png" group-title="News",News18 Punjab Haryana
+https://n18syndication.akamaized.net/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/index.m3u8
+#EXTINF:-1 tvg-id="696" tvg-name="News18 Oriya" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_News_Oriya.png" group-title="News",News18 Oriya
+https://drmlive.in/voot/web/696.m3u8
+#EXTINF:-1 tvg-id="627" tvg-name="News18 Assam" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/News_18_Assam.png" group-title="News",News18 Assam
+https://drmlive.in/voot/web/627.m3u8
+#EXTINF:-1 tvg-id="965" tvg-name="News 18 Kerala" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/News_18_Kerala.png" group-title="News",News 18 Kerala
+https://drmlive.in/voot/web/965.m3u8
+#EXTINF:-1 tvg-id="531" tvg-name="News18 RAJASTHAN" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_RAJASTHAN.png" group-title="News",News18 RAJASTHAN
+https://drmlive.in/voot/web/531.m3u8
+#EXTINF:-1 tvg-id="693" tvg-name="News18 BIHAR" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_BIHAR.png" group-title="News",News18 BIHAR
+https://drmlive.in/voot/web/693.m3u8
+#EXTINF:-1 tvg-id="529" tvg-name="News18 MP" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_MP.png" group-title="News",News18 MP
+https://drmlive.in/voot/web/529.m3u8
+#EXTINF:-1 tvg-id="530" tvg-name="News18 UP" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_UP.png" group-title="News",News18 UP
+https://drmlive.in/voot/web/530.m3u8
+#EXTINF:-1 tvg-id="694" tvg-name="News18 JKLH" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_Urdu.png" group-title="News",News18 JKLH
+https://drmlive.in/voot/web/694.m3u8
 #EXTINF:-1 tvg-id="0-9-aajtak" tvg-name="Aaj Tak" tvg-logo="https://akamaividz2.zee5.com/image/upload/resources/0-9-aajtak/channel_list/1170x658withlogo019c8cb0af414e68a6008efc72c6a72f.png" group-title="News",Aaj Tak
 https://zee5.drmlive.in/cmaf/live/2105503/AAJTAKHDNEWSELE/index-connected.m3u8
 #EXTINF:-1 tvg-id="0-9-zeenews" tvg-name="Zee News" tvg-logo="https://akamaividz2.zee5.com/image/upload/resources/0-9-zeenews/channel_list/1170x658withlogo4f46c0d87b44459fb517a3f81f5cf754.png" group-title="News",Zee News
@@ -137,3 +225,21 @@ https://aasthaott.akamaized.net/110923/smil:bhajan.smil/playlist.m3u8
 https://zee5.drmlive.in/cmaf/live/2105538/ZeeTalkiesELE/master.m3u8
 #EXTINF:-1 tvg-id="0-9-9z5398761" tvg-name="Aastha" tvg-logo="https://akamaividz2.zee5.com/image/upload/resources/0-9-9z5398761/channel_list/1170x658withlogodbb904df46d441628b3ab324cbde6745.png" group-title="Devotional",Aastha
 https://aasthaott.akamaized.net/110923/smil:aasthatv.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="discoveryhd" tvg-name="Discovery HD" tvg-logo="https://w7.pngwing.com/pngs/213/748/png-transparent-discovery-channel-hd-logo-thumbnail.png" group-title="Wildlife",Discovery HD
+https://drmlive.in/discoveryplus/discoveryhd.m3u8
+#EXTINF:-1 tvg-id="animalplanet" tvg-name="Animal Planet" tvg-logo="https://i.pinimg.com/564x/df/be/09/dfbe0936d2d7cf9d4c973975806bab0b.jpg" group-title="Wildlife",Animal Planet
+https://drmlive.in/discoveryplus/animalplanet.m3u8
+#EXTINF:-1 tvg-id="discoveryid" tvg-name="Discovery ID" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0b/ID-2020.svg" group-title="Crime",Discovery ID
+https://drmlive.in/discoveryplus/discoveryid.m3u8
+#EXTINF:-1 tvg-id="discoverysci" tvg-name="Discovery Sci" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f6/Science_2017.svg" group-title="Wildlife",Discovery Sci
+https://drmlive.in/discoveryplus/discoverysci.m3u8
+#EXTINF:-1 tvg-id="discoverykids" tvg-name="Discovery Kids" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/00/DKids_2021.svg" group-title="Kids",Discovery Kids
+https://drmlive.in/discoveryplus/discoverykids.m3u8
+#EXTINF:-1 tvg-id="dmax" tvg-name="DMAX" tvg-logo="https://eu1-prod-images.disco-api.com/2022/06/01/848c209d-a04a-4383-9bee-63d7da0d77bb.png" group-title="Wildlife",DMAX
+https://drmlive.in/discoveryplus/dmax.m3u8
+#EXTINF:-1 tvg-id="tlc" tvg-name="TLC" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/dc/TLC_%282006%29.svg" group-title="Lifestyle",TLC
+https://drmlive.in/discoveryplus/tlc.m3u8
+#EXTINF:-1 tvg-id="travel" tvg-name="Travel" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/85/Travel_Channel_2018.svg" group-title="Lifestyle",Travel
+https://drmlive.in/discoveryplus/travel.m3u8
+#EXTINF:-1 tvg-id="hgtv" tvg-name="HGTV" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/a8/HGTV_2010.svg" group-title="Lifestyle",HGTV
+https://drmlive.in/discoveryplus/hgtv.m3u8
