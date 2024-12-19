@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>JioCinema BY DRMLIVE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://drmlive.in/JioCinema.jpg" type="image/x-icon">
+    <link rel="icon" href="https://drmlive.i/zee5.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://ipl-2023-schedule.pages.dev/jtv.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <style>
+        /* Your CSS Styles */
+        @import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            font-family: Gloock, serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: #333;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+            background-color: #f8f8f8;
+            padding: 7px 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        }
+        .toggle-wrapper {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 10px;
+        }
+        .directory-item,
+        .file-item {
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease;
+            background-color: #fff;
+            padding: 10px;
+        }
+        .directory-item img,
+        .file-item img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform .3s ease;
+        }
+        .directory-item a,
+        .file-item a {
+            text-decoration: none;
+            color: #00bfff;
+            font-weight: 700;
+            display: block;
+            margin-top: 5px;
+            transition: color .3s ease;
+        }
+        .directory-item:hover,
+        .file-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+        .directory-item img:hover,
+        .file-item img:hover {
+            transform: scale(1.1);
+        }
+        .directory-item a:hover,
+        .file-item a:hover {
+            color: #007bff;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .group-filter {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .group-filter select,
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #333;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .dark-mode {
+            background-color: #000;
+            color: #fff;
+        }
+        .dark-mode .header-container {
+            background-color: #111;
+            color: #fff;
+        }
+        .dark-mode .directory-item {
+            background-color: #222;
+            color: #fff;
+        }
+        .dark-mode .directory-item a {
+            color: #00bfff;
+        }
+        .dark-mode .directory-item a:hover {
+            color: #fff;
+        }
+        .dark-mode .group-filter select,
+        .dark-mode .search-bar input {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body class="dark-mode"> <!-- Start in dark mode -->
+    <div class="header-container">
+        <h1 id="title">JioCinema BY DRMLIVE</h1>
+        <div class="toggle-wrapper">
+            <input type="checkbox" class="checkbox" id="checkbox" checked> <!-- checkbox checked by default -->
+            <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+            </label>
+        </div>
+    </div>
+    <div class="group-filter">
+        <label for="group-select">Select Channel Group:</label>
+        <select id="group-select" onchange="filterChannels()">
+            <option value="all">All</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Movies">Movies</option>
+            <option value="Music">Music</option>
+            <option value="Kids">Kids</option>
+            <option value="Sports">Sports</option>
+            <option value="Business">Business</option>
+            <option value="News">News</option>
+        </select>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search Channels" onkeyup="searchChannels()">
+    </div>
+    <div class="file-container" id="channels-container"></div>
+
+    <script>
+        // Fetch channels data from external JSON file
+        fetch('channels.json')
+            .then(response => response.json())
+            .then(data => {
+                const channelsContainer = document.getElementById('channels-container');
+                
+                data.forEach(channel => {
+                    const channelDiv = document.createElement('div');
+                    channelDiv.classList.add('directory-item');
+                    channelDiv.setAttribute('data-group', channel.group);
+                    channelDiv.setAttribute('data-name', channel.name);
+
+                    // Wrap the entire directory-item inside the anchor tag
+                    const channelLink = document.createElement('a');
+                    channelLink.href = '/Play.html?id=' + channel.id;
+                    channelLink.classList.add('channel-link');  // Optional, for extra styling
+
+                    const channelImg = document.createElement('img');
+                    channelImg.src = channel.logo;
+                    channelImg.alt = channel.name;
+                    channelImg.loading = 'lazy';
+
+                    const channelName = document.createElement('span');
+                    channelName.textContent = channel.name;
+
+                    // Append elements to the anchor tag
+                    channelLink.appendChild(channelImg);
+                    channelLink.appendChild(channelName);
+
+                    // Append anchor to directory-item
+                    channelDiv.appendChild(channelLink);
+
+                    // Add directory-item to channels container
+                    channelsContainer.appendChild(channelDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading channel data:', error);
+            });
+
+        function filterChannels() {
+            var selectedGroup = document.getElementById('group-select').value;
+            var channels = document.querySelectorAll('.directory-item');
+
+            channels.forEach(function (channel) {
+                if (selectedGroup === 'all' || channel.getAttribute('data-group') === selectedGroup) {
+                    channel.style.display = 'block';
+                } else {
+                    channel.style.display = 'none';
+                }
+            });
+        }
+
+        function searchChannels() {
+            var input = document.getElementById('search-input').value.toLowerCase();
+            var channels = document.querySelectorAll('.directory-item');
+
+            channels.forEach(function (channel) {
+                var name = channel.getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    channel.style.display = 'block';
+                } else {
+                    channel.style.display = 'none';
+                }
+            });
+        }
+
+        // Dark mode toggle
+        const checkbox = document.getElementById("checkbox");
+        checkbox.addEventListener("change", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JioCinema BY DRMLIVE</title>
+    <link rel="stylesheet" href="./player.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        #player {
+            position: absolute;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .channel-info {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 999;
+        }
+
+        /* Position the controls above the timeline */
+        .jw-player .jw-controls {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        /* Timeline (slider) below the controls */
+        .jw-player .jw-slider-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 50; /* Make sure the timeline is behind the controls */
+        }
+
+        /* Ensuring the video content takes the full screen, excluding controls and timeline */
+        .jw-player .jw-video {
+            height: calc(100% - 50px); /* Adjust based on your controls height */
+        }
+
+        /* Optional: Adjust background color or other styles */
+        .jw-player .jw-slider-time {
+            background-color: #000 !important;
+        }
+
+        /* Optional: Style custom buttons */
+        .jw-button.custom-button {
+            background-color: #f00; /* Red background for testing */
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="player"></div>
+<div id="channel-info" class="channel-info"></div>
+
+<script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+<script>
+// Function to setup JWPlayer
+function setupPlayer(videoUrl, channelName) {
+    const playerInstance = jwplayer("player").setup({
+        controls: true,
+        sharing: true,
+        displaytitle: true,
+        autoplay: true,
+        displaydescription: true,
+        abouttext: "Video Player By DRMLIVE",
+        aboutlink: "https://t.me/+_RiCu2cz5TkxZmU1",
+        skin: {
+            name: "netflix"
+        },
+        captions: {
+            color: "#FFF",
+            fontSize: 14,
+            backgroundOpacity: 0,
+            edgeStyle: "raised"
+        },
+        playlist: [
+            {
+                title: channelName, // Use the channel name in the player title
+                description: "You're Watching",
+                sources: [
+                    {
+                        file: videoUrl,
+                        type: "hls",
+                        label: "1080p",
+                        default: true
+                    }
+                ]
+            }
+        ],
+        advertising: {
+            client: "vast",
+            schedule: [
+                {
+                    offset: "pre",
+                    tag: ""
+                }
+            ]
+        }
+    });
+
+    playerInstance.on("ready", function () {
+        // Add custom button for changing the stretching mode
+        playerInstance.addButton(
+            "zoom222222.svg", // Button icon URL (replace with your actual icon file)
+            "Change Stretching", // Button tooltip text
+            function() {
+                // Cycle through the stretching modes
+                const currentStretching = playerInstance.getConfig().stretching;
+                const stretchingModes = ["uniform", "exactfit", "fill"];
+                const nextIndex = (stretchingModes.indexOf(currentStretching) + 1) % stretchingModes.length;
+                const nextStretching = stretchingModes[nextIndex];
+
+                // Update the player stretching mode
+                playerInstance.setConfig({
+                    stretching: nextStretching
+                });
+            },
+            "custom-button" // Button ID
+        );
+
+        // Additional player adjustments (like forward, rewind) can be kept here
+        const playerContainer = playerInstance.getContainer();
+        const buttonContainer = playerContainer.querySelector(".jw-button-container");
+        const spacer = buttonContainer.querySelector(".jw-spacer");
+        const timeSlider = playerContainer.querySelector(".jw-slider-time");
+        buttonContainer.replaceChild(timeSlider, spacer);
+
+        playerInstance.on("adBlock", () => {
+            const modal = document.querySelector("div.modal");
+            modal.style.display = "flex";
+
+            document.getElementById("close").addEventListener("click", () => location.reload());
+        });
+
+        const rewindContainer = playerContainer.querySelector(".jw-display-icon-rewind");
+        const forwardContainer = rewindContainer.cloneNode(true);
+        const forwardDisplayButton = forwardContainer.querySelector(".jw-icon-rewind");
+        forwardDisplayButton.style.transform = "scaleX(-1)";
+        forwardDisplayButton.ariaLabel = "Forward 10 Seconds";
+        const nextContainer = playerContainer.querySelector(".jw-display-icon-next");
+        nextContainer.parentNode.insertBefore(forwardContainer, nextContainer);
+
+        playerContainer.querySelector(".jw-display-icon-next").style.display = "none";
+        const rewindControlBarButton = buttonContainer.querySelector(".jw-icon-rewind");
+        const forwardControlBarButton = rewindControlBarButton.cloneNode(true);
+        forwardControlBarButton.style.transform = "scaleX(-1)";
+        forwardControlBarButton.ariaLabel = "Forward 10 Seconds";
+        rewindControlBarButton.parentNode.insertBefore(forwardControlBarButton, rewindControlBarButton.nextElementSibling);
+
+        [forwardDisplayButton, forwardControlBarButton].forEach((button) => {
+            button.onclick = () => {
+                playerInstance.seek(playerInstance.getPosition() + 10);
+            };
+        });
+    });
+}
+
+// Get query parameters from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const channelId = urlParams.get('id'); // Get the 'id' parameter (e.g., "Rishtey")
+
+// Fetch channels data from external JSON file
+fetch('channels.json')
+    .then(response => response.json())
+    .then(data => {
+        // Find the channel by ID
+        const channel = data.find(ch => ch.id === channelId); 
+
+        if (channel) {
+            const videoUrl = channel.url; // Get the video URL
+            const channelName = channel.name; // Get the channel name
+
+            // Setup the player with the video URL and channel name
+            setupPlayer(videoUrl, channelName);
+        } else {
+            alert("Channel not found.");
+        }
+    })
+    .catch(error => {
+        console.error('Error loading channel data:', error);
+        alert("Error loading channel data.");
+    });
+</script>
+</body>
+</html>
