@@ -175,7 +175,7 @@
 
     <script>
         // Fetch channels data from external JSON file
-        fetch('channels.json')
+        fetch('./channels.json')
             .then(response => response.json())
             .then(data => {
                 const channelsContainer = document.getElementById('channels-container');
