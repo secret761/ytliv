@@ -176,7 +176,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const channelId = urlParams.get('id'); // Get the 'id' parameter (e.g., "Rishtey")
 
 // Fetch channels data from external JSON file
-fetch('channels.json')
+fetch('./channels.json')
     .then(response => response.json())
     .then(data => {
         // Find the channel by ID
