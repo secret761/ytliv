@@ -1,0 +1,24 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="177" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_News_India.png",ABP News India
+https://abplivetv.pc.cdn.bitgravity.com/httppush/abp_livetv/abp_abpnews/master.m3u8
+
+#EXTINF:-1 tvg-id="504" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_News.png",Zee News
+https://secret761.github.io/ytliv/test/news/zeeN.m3u8
+
+#EXTINF:-1 tvg-id="ts580" tvg-logo="https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-12155-j9pd5ug8-v1/imageContent-12155-j9pd5ug8-m1.png" group-title="Regional Punjabi",Zee Punjab Haryana Himachal Pradesh
+https://secret761.github.io/ytliv/test/news/zeehp.m3u8
+
+#EXTINF:-1 tvg-id="173" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Aaj_Tak.png",Aaj Tak HD
+https://feeds.intoday.in/aajtak/api/aajtakhd/master.m3u8
+
+#EXTINF:-1 tvg-id="173" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Aaj_Tak.png",Aaj Tak
+https://feeds.intoday.in/aajtak/api/master.m3u8
+
+#EXTINF:-1 tvg-id="493" tvg-name="India Today" tvg-type="News" group-title="ZEE5" tvg-language="English" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/India_Today.png",India Today
+https://feeds.intoday.in/hltapps/api/master.m3u8
+
+#EXTINF:-1 tvg-id="493" tvg-name="India Today" tvg-type="News" group-title="ZEE5" tvg-language="English" tvg-logo="https://akm-img-a-in.tosshub.com/sites/indiatoday/resources/img/livetv-gnt-default.jpg",GNT News
+https://feeds.intoday.in/gnt/api/master.m3u8
+
+#EXTINF:-1 tvg-id="655" group-title="Jio Cinema" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_Haryana_and_HP_News.png",News18 Punjab Haryana
+https://nw18live.cdn.jio.com/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/News18_Punjab_Haryana_HP_NW18_MOB-audio_98835_eng=98800-video=2293600.m3u8
