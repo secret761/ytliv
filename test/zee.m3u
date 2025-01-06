@@ -1,0 +1,54 @@
+#EXTM3U
+
+
+#EXTM3U
+
+# Entertainment
+#EXTINF:-1 tvg-id="zeetv" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_TV.png",Zee TV
+https://la.drmlive.au/tp/zee-zeetv.m3u8
+#EXTINF:-1 tvg-id="zeetvhd" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_TV_HD.png",Zee TV HD
+https://la.drmlive.au/tp/zee-zeetvhd.m3u8
+#EXTINF:-1 tvg-id="zeetalkies" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Talkies.png",Zee Talkies
+https://la.drmlive.au/tp/zee-zeetalkies.m3u8
+#EXTINF:-1 tvg-id="zeeyuva" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Yuva.png",Zee Yuva
+https://la.drmlive.au/tp/zee-zeeyuva.m3u8
+#EXTINF:-1 tvg-id="tvhd_0" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/TV_HD.png",TV HD
+https://la.drmlive.au/tp/zee-tvhd_0.m3u8
+#EXTINF:-1 tvg-id="bigmagic" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Big_Magic.png",Big Magic
+https://la.drmlive.au/tp/zee-bigmagic_1786965389.m3u8
+#EXTINF:-1 tvg-id="zeeanmol" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Anmol.png",Zee Anmol
+https://la.drmlive.au/tp/zee-zeeanmol.m3u8
+#EXTINF:-1 tvg-id="zeemarathi" group-title="ZEE5" tvg-language="Marathi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Marathi.png",Zee Marathi
+https://la.drmlive.au/tp/zee-zeemarathi.m3u8
+#EXTINF:-1 tvg-id="250" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Channel_250.png",Channel 250
+https://la.drmlive.au/tp/zee-250.m3u8
+
+# Movies
+#EXTINF:-1 tvg-id="zeecinemahd" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Cinema_HD.png",Zee Cinema HD
+https://la.drmlive.au/tp/zee-zeecinemahd.m3u8
+#EXTINF:-1 tvg-id="channel_2105335046" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Channel_2105335046.png",Channel 2105335046
+https://la.drmlive.au/tp/zee-channel_2105335046.m3u8
+#EXTINF:-1 tvg-id="tvpictureshd" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/TV_Pictures_HD.png",TV Pictures HD
+https://la.drmlive.au/tp/zee-tvpictureshd.m3u8
+#EXTINF:-1 tvg-id="zeeaction" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Action.png",Zee Action
+https://la.drmlive.au/tp/zee-zeeaction.m3u8
+#EXTINF:-1 tvg-id="zeeclassic" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Classic.png",Zee Classic
+https://la.drmlive.au/tp/zee-zeeclassic.m3u8
+#EXTINF:-1 tvg-id="zeecinema" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Cinema.png",Zee Cinema
+https://la.drmlive.au/tp/zee-zeecinema.m3u8
+#EXTINF:-1 tvg-id="zeeanmolcinema" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Anmol_Cinema.png",Zee Anmol Cinema
+https://la.drmlive.au/tp/zee-zeeanmolcinema.m3u8
+#EXTINF:-1 tvg-id="176" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Channel_176.png",Channel 176
+https://la.drmlive.au/tp/zee-176.m3u8
+#EXTINF:-1 tvg-id="209" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Channel_209.png",Channel 209
+https://la.drmlive.au/tp/zee-209.m3u8
+
+# Music
+#EXTINF:-1 tvg-id="353" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Channel_353.png",Channel 353
+https://la.drmlive.au/tp/zee-353.m3u8
+#EXTINF:-1 tvg-id="zing" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zing.png",Zing
+https://la.drmlive.au/tp/zee-zing.m3u8
+#EXTINF:-1 tvg-id="133" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Channel_133.png",Channel 133
+https://la.drmlive.au/tp/zee-133.m3u8
+#EXTINF:-1 tvg-id="134" group-title="ZEE5" tvg-language="Hindi" tvg-logo="http://jiotv.catchup.cdn.jio.com/dare_images/images/Channel_134.png",Channel 134
+https://la.drmlive.au/tp/zee-134.m3u8
