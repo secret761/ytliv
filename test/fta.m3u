@@ -129,19 +129,13 @@ http://172.105.123.238:18002/play/a070
 http://172.105.123.238:18002/play/a07j
 #EXTINF:-1 tvg-logo="https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-52853-k982u9ts-v1/imageContent-52853-k982u9ts-m1.png",Zee Biskope
 http://172.105.123.238:18002/play/a06f
-#EXTINF:-1 ,Masti
-http://172.105.123.238:18002/play/a07c
-#EXTINF:-1 ,Movie Plus
-http://172.105.123.238:18002/play/a06p
-#EXTINF:-1 ,NAZARA
-http://172.105.123.238:18002/play/a05v
+
 
 #EXTINF:-1 tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sun_Marathi.png",Sun Marathi
 http://172.105.123.238:18002/play/a05w
-#EXTINF:-1 ,COLORS CINEPLEX SUPERHITS
+#EXTINF:-1 tvg-logo="https://mediaready.videoready.tv/tatasky/image/fetch/f_auto,fl_lossy,q_auto,dpr_0.8333333134651184/https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Colors-Cineplex-SuperHits-WB-Transparent.png",COLORS CINEPLEX SUPERHITS
 http://172.105.123.238:18002/play/a06o
-#EXTINF:-1 ,Cineplex Bollywood
-http://172.105.123.238:18002/play/a06j
+
 
 
 #EXTINF:-1 tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/IBN_7.png",News 18 India
@@ -153,15 +147,8 @@ http://172.105.123.238:18002/play/a07f
 #EXTINF:-1 tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Republic_Bharat.png",Republic Bharat
 http://172.105.123.238:18002/play/a07h
 
-#EXTINF:-1 ,GOLDMINES MOVIES
-http://172.105.123.238:18002/play/a071
-#EXTINF:-1 ,Goldmines Bollywood
-http://172.105.123.238:18002/play/a06k
-#EXTINF:-1 ,ISHARA
-http://172.105.123.238:18002/play/a077
+
 #EXTINF:-1 tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/India_TV.png",India TV
 http://172.105.123.238:18002/play/a07e
 #EXTINF:-1 tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Manoranjan_Movies.png",Manoranjan Movies
 http://172.105.123.238:18002/play/a06q
-#EXTINF:-1 ,Manoranjan Prime
-http://172.105.123.238:18002/play/a066
