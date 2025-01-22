@@ -1,0 +1,107 @@
+
+[
+    {
+      "id": "173",
+      "group": "ZEE5",
+      "language": "Hindi",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/Aaj_Tak.png",
+      "name": "Aaj Tak HD",
+      "url": "https://feeds.intoday.in/aajtak/api/aajtakhd/master.m3u8"
+    },
+    {
+      "id": "173",
+      "group": "ZEE5",
+      "language": "Hindi",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/Aaj_Tak.png",
+      "name": "Aaj Tak",
+      "url": "https://feeds.intoday.in/aajtak/api/master.m3u8"
+    },
+    {
+      "id": "493",
+      "group": "ZEE5",
+      "language": "English",
+      "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/India_Today.png",
+      "name": "India Today",
+      "url": "https://feeds.intoday.in/hltapps/api/master.m3u8"
+    },
+    {
+      "id": "493",
+      "group": "ZEE5",
+      "language": "English",
+      "logo": "https://akm-img-a-in.tosshub.com/sites/indiatoday/resources/img/livetv-gnt-default.jpg",
+      "name": "GNT News",
+      "url": "https://feeds.intoday.in/gnt/api/master.m3u8"
+    },
+    {
+      "id": "177",
+      "group": "ZEE5",
+      "language": "Hindi",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_News_India.png",
+      "name": "ABP News India",
+      "url": "https://abplivetv.pc.cdn.bitgravity.com/httppush/abp_livetv/abp_abpnews/master.m3u8"
+    },
+    {
+      "id": "504",
+      "group": "ZEE5",
+      "language": "Hindi",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_News.png",
+      "name": "Zee News",
+      "url": "https://secret761.github.io/ytliv/test/news/zeeN.m3u8"
+    },
+    {
+    "id": "ts580",
+    "group": "Regional Punjabi",
+    "language": "Punjabi",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Punjabi_HP_Haryana.png",
+    "name": "Zee Punjab Haryana Himachal Pradesh",
+    "url": "https://secret761.github.io/ytliv/test/news/zeehp.m3u8"
+  },
+    {
+      "id": "231",
+      "group": "News",
+      "language": "Hindi",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/IBN_7.png",
+      "name": "News18 India",
+      "url": "https://secret761.github.io/ytliv/test/news/n18india.m3u8"
+    },
+    {
+      "id": "655",
+      "group": "Jio Cinema",
+      "language": "Hindi",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/ETV_Haryana_and_HP_News.png",
+      "name": "News18 Punjab Haryana",
+      "url": "https://secret761.github.io/ytliv/test/news/n18hph.m3u8"
+    },
+    {
+      "id": "501",
+      "group": "ZEE5",
+      "language": "Hindi",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/News_24.png",
+      "name": "News 24",
+      "url": "https://vidcdn.vidgyor.com/news24-origin/liveabr/playlist.m3u8"
+    },
+    {
+      "id": "258",
+      "group": "ZEE5",
+      "language": "Hindi",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_India.png",
+      "name": "NDTV India",
+      "url": "https://ndtvindiaelemarchana.akamaized.net/hls/live/2003679/ndtvindia/master.m3u8"
+    },
+    {
+      "id": "255",
+      "group": "ZEE5",
+      "language": "English",
+      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_24x7.png",
+      "name": "NDTV 24x7",
+      "url": "https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678/ndtv24x7/master.m3u8"
+    },
+    {
+      "id": "972",
+      "group": "Devotional",
+      "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Sarv_Dharam_Sangam.png",
+      "name": "Sarv Dharam Sangam",
+      "url": "https://95eryw7zdwn4-hls-live.wmncdn.net/sarvdharamsangam/tv.stream/index.m3u8"
+  }
+  ]
+  
