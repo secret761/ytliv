@@ -28,7 +28,7 @@
       "id": "493",
       "group": "ZEE5",
       "language": "English",
-      "logo": "https://akm-img-a-in.tosshub.com/sites/indiatoday/resources/img/livetv-gnt-default.jpg",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Tez.png",
       "name": "GNT News",
       "url": "https://feeds.intoday.in/gnt/api/master.m3u8"
     },
@@ -96,6 +96,13 @@
       "name": "NDTV 24x7",
       "url": "https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678/ndtv24x7/master.m3u8"
     },
+    {
+      "id": "ts616",
+      "group": "Knowledge",
+      "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/History_18_Hindi.png",
+      "name": "History TV18 HD",
+      "url": "https://amg01448-amg01448c16-samsung-in-3495.playouts.now.amagi.tv/playlist/amg01448-samsungindia-historychannelhindi-samsungin/playlist.m3u8"
+  },
     {
       "id": "972",
       "group": "Devotional",
