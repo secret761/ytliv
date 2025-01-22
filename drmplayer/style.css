@@ -1,6 +1,3 @@
-
-<style>
-  
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=MuseoModerno:wght@300&family=Playball&display=swap');
 
 h1 {
@@ -219,20 +216,19 @@ body {
 
 }
 
-#jwplayerDiv {
- padding: 47.50% 0 0 0;
- position: relative;
- width: 90%;
- box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
- border-radius: 10px;
- overflow: hidden;
+.videoplayer{
+   margin: 10px;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   border-radius: 10px;
+   
 }
- .videoplayer{
-  margin: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
- border-radius: 10px;
-
- }
+#jwplayerDiv {
+   padding: 47.50% 0 0 0;
+   position: relative;
+   /* width: 100%; */
+   border-radius: 10px;
+   overflow: hidden;
+}
 
 
 html {
@@ -282,19 +278,17 @@ button:hover {
 }
 
 .program-info {
- width: auto;
- height: auto;
- margin-top: 10px;
- margin-bottom: 30px;
- display: block;
- background-color: #beccc3;
- box-shadow: 5px 5px 5px #b3b3b3, -5px -5px 5px #fff;
- border-radius: 10px;
- background-color: rgb(53, 68, 61);
-    box-shadow: rgb(67, 72, 75) 5px 5px 5px, rgb(24, 26, 27) -5px -5px 5px;
-
- padding: 10px;
- padding-bottom: 20px;
+   width: auto;
+   height: auto;
+   margin-top: 10px;
+   margin-bottom: 30px;
+   display: block;
+   background-color: #beccc3;
+   box-shadow: 5px 5px 5px #b3b3b3, -5px -5px 5px #fff;
+   border-radius: 10px;
+   padding: 10px;
+   padding-bottom: 30px;
+   
 }
 
 .logo {
@@ -305,8 +299,7 @@ button:hover {
  background-color: #fff;
  border-radius: 50%;
  box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #fff;
-    background-color: rgb(209 205 199);
-    box-shadow: rgb(67, 72, 75) 5px 5px 10px, rgb(24, 26, 27) -5px -5px 10px;
+   
 }
 
 .channel-name {
@@ -329,16 +322,18 @@ button:hover {
  color: darkcyan;
 
  text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
- color: rgb(107, 255, 255);
- text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
+
 
 }
 
 .program-name {
- margin-top: 10px;
- font-size: 1.4rem;
- font-weight: 700;
- color: #333
+   font-family: 'Fjalla One', sans-serif;
+   font-weight: 700;
+   color: lightmagenta;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+   margin-top: 30px;
+   font-size: 1.5rem;
+   position: absolute;
 }
 
 .program-description {
@@ -359,9 +354,7 @@ button:hover {
  padding-top: 0;
  box-shadow: 5px 5px 5px #b3b3b3, -5px -5px 5px #b3b3b3;
  background-color: #beccc3;
- border-radius: 10px;
- box-shadow: rgb(67, 72, 75) 5px 5px 5px, rgb(67, 72, 75) -5px -5px 5px;
-    background-color: rgb(53, 68, 61);
+ border-radius: 10px;   
 
 }
 
@@ -375,6 +368,7 @@ button:hover {
  margin-top: 10px;
  scrollbar-width: none;
  -ms-overflow-style: none
+ 
 }
 
 #container::-webkit-scrollbar {
@@ -450,9 +444,7 @@ button:hover {
 .slider-arrow.right {
  right: 10px
 }
-</style>
-<!-- Nav Css -->
-<style>
+
 body {
  /*  background-image: linear-gradient(to right bottom, #02a8e2, #64aceb, #93afef, #b7b3ee, #d3b8eb, #d2ade3, #d2a1da, #d295d0, #ba74c3, #9e55b7, #7e36ad, #5716a4);
  background:
@@ -496,10 +488,7 @@ nav {
 
  backdrop-filter: blur(15px);
  
-    background-image: initial;
-    border-color: rgba(48, 52, 54, 0.25);
-    background-color: rgb(71, 77, 80);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 1px;
+   
 }
 
 
@@ -1409,4 +1398,3 @@ body.dark @media (max-width:800px) {
   max-width: 100%;
  }
 }
-</style>

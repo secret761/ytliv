@@ -4,7 +4,7 @@
       "id": "173",
       "group": "ZEE5",
       "language": "Hindi",
-      "logo": "http://jiotv.catchup.cdn.jio.com/dare_images/images/Aaj_Tak.png",
+      "logo": "https://mediaready.videoready.tv/tatasky/image/fetch/f_auto,fl_lossy,q_auto,dpr_1.25/https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Aaj%20Tak%20HD.png",
       "name": "Aaj Tak HD",
       "url": "https://feeds.intoday.in/aajtak/api/aajtakhd/master.m3u8"
     },
