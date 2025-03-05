@@ -1,121 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+    <script src="https://ssl.p.jwpcdn.com/player/v/8.32.1/jwplayer.js" type="text/javascript"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>astr</title>
+    <title>Player</title>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #000;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
 
-      #ads-top,
-      #ads-bottom {
-        margin: 10px 0;
-        text-align: center;
-        background-color: #333;
-        padding: 10px 0;
-        width: 100%;
-        max-width: 728px;
-      }
+        #player-container {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
+            margin: 10px 0;
+        }
 
-      #player-container {
-        position: relative;
-        width: 100%;
-        max-width: 1280px; /* Restrict max player width */
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        /* Custom scrollbar styles */
+        body::-webkit-scrollbar {
+            width: 8px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
 
-      #player {
-        width: 100% !important;
-        height: 100% !important;
-      }
+        body::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: rgba(140, 140, 140, 0.5);
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(140, 140, 140, 0.7);
+        }
+
+        .ad-container {
+            margin: 10px 0;
+            text-align: center;
+        }
     </style>
-  </head>
-  <script type='text/javascript' src='//eltontry.com/09/f1/e9/09f1e956c711aea6a898d5abbb78d092.js'></script>
-  <body>
-    <!-- Top Advertisement -->
-    <div id="ads-top">
-      <script type="text/javascript">
-        atOptions = {
-          'key': '701fef7de243c4e8e91e6e6b3a2fea1e',
-          'format': 'iframe',
-          'height': 90,
-          'width': 728,
-          'params': {}
-        };
-      </script>
-      <script type="text/javascript" src="//eltontry.com/701fef7de243c4e8e91e6e6b3a2fea1e/invoke.js"></script>
+</head>
+<script type='text/javascript' src='//eltontry.com/09/f1/e9/09f1e956c711aea6a898d5abbb78d092.js'></script>
+
+<body>
+    <div class="ad-container">
+        <script type="text/javascript">
+            atOptions = {
+                'key': '701fef7de243c4e8e91e6e6b3a2fea1e',
+                'format': 'iframe',
+                'height': 90,
+                'width': 728,
+                'params': {}
+            };
+        </script>
+        <script type="text/javascript" src="//eltontry.com/701fef7de243c4e8e91e6e6b3a2fea1e/invoke.js"></script>
     </div>
 
-    <!-- Video Player -->
-    <div id="player-container">
-      <div id="player"></div>
+    <div id="player-container"></div>
+
+    <div class="ad-container">
+        <script type="text/javascript">
+            atOptions = {
+                'key': '701fef7de243c4e8e91e6e6b3a2fea1e',
+                'format': 'iframe',
+                'height': 90,
+                'width': 728,
+                'params': {}
+            };
+        </script>
+        <script type="text/javascript" src="//eltontry.com/701fef7de243c4e8e91e6e6b3a2fea1e/invoke.js"></script>
     </div>
 
-    <!-- Bottom Advertisement -->
-    <div id="ads-bottom">
-      <script type="text/javascript">
-        atOptions = {
-          'key': '701fef7de243c4e8e91e6e6b3a2fea1e',
-          'format': 'iframe',
-          'height': 90,
-          'width': 728,
-          'params': {}
-        };
-      </script>
-      <script type="text/javascript" src="//eltontry.com/701fef7de243c4e8e91e6e6b3a2fea1e/invoke.js"></script>
-    </div>
-
-    <!-- JWPlayer Script -->
-    <script src="//ssl.p.jwpcdn.com/player/v/8.25.1/jwplayer.js"></script>
-    <script>
-      jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
-
-      window.onload = function () {
-        var playerInstance = jwplayer("player");
-        var source = {
-          file: "https://d1yws6emo43ny.cloudfront.net/CH5/masterCH5.mpd",
-          default: true,
-          onXhrOpen: function (xhr, url) {
-            xhr.setRequestHeader(
-              'Authorization',
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3bXZlciI6Miwid21pZGZtdCI6ImFzY2lpIiwid21pZHR5cCI6MSwid21rZXl2ZXIiOjEsIndtaWRsZW4iOjUxMiwid21pZCI6IllUSTJOak0yTW1FdFpqWmhZaTAwWm1SakxXSXpNR0l0T0RWbE5HSm1ZVFk1TmpZMiIsIndtb3BpZCI6MzIsImV4cCI6MTczMzgzNzI1NiwiaWF0IjoxNzMzMjMzMjU2fQ.s2x43dPcLUq9ECPaR3WV1R0N03X_IBF_zgp-pirRqaE'
-            );
-          },
-        };
-        source.type = "dash";
-        source.drm = {
-          clearkey: {
-            keyId: "a8eb0f152c6e429ca7a53f399aadf257",
-            key: "c593c2eeea62742285b99e4d87b1c84a",
-          },
-        };
-        playerInstance.setup({
-          playlist: [
-            {
-              sources: [source],
+    <script type="text/javascript">
+        jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+        jwplayer("player-container").setup({
+            file: "https://otte.live.fly.ww.aiv-cdn.net/bom-nitro/live/clients/dash/enc/9ekont5e8k/out/v1/e6aaa1b986d0434b95156e22db44eb71/cenc.mpd",
+            aspectratio: '16:9',
+            width: '100%',
+            autostart: true,
+            image: '',
+            mute: false,
+            preload: 'auto',
+            captions: { color: 'white', fontSize: '16px', backgroundOpacity: 0 },
+            sharing: {
+                sites: ['facebook', 'twitter']
             },
-          ],
-          width: "100%",
-          height: "100%",
-          aspectratio: "16:9",
-          autostart: true,
-          cast: {
-            appid: "CC1AD845",
-          },
+            drm: {
+                "clearkey": {
+                    "keyId": "8e73c8415d7648e10b06000b1ace5953",
+                    "key": "f5d649bf1495cd0864a7422624ac5a86"
+                }
+            }
         });
-      };
+
+        // Ensure playback compatibility for mobile devices
+        jwplayer().on('ready', function () {
+            const player = document.querySelector('#player-container');
+            if (player) {
+                player.style.height = window.innerHeight + 'px';
+            }
+        });
+
+        jwplayer().on('play', function () {
+            document.body.style.backgroundColor = "#000";
+        });
+
+        jwplayer().on('error', function (e) {
+            console.error("Playback error:", e.message);
+        });
     </script>
-  </body>
+<!-- Anti-Adblock Popup -->
+<div class="adb" id="adb" style="display: none;">
+    <div class="adbs">
+        <h3>Adblock Detected</h3>
+        <p>Please disable adblock to proceed to the destination page</p>
+    </div>
+</div>
+
+<style>
+    .adb {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(51, 51, 51, 0.9);
+        z-index: 10000;
+        text-align: center;
+        color: #111;
+    }
+
+    .adbs {
+        margin: 0 auto;
+        width: auto;
+        min-width: 400px;
+        position: fixed;
+        z-index: 99999;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px 30px 30px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+    }
+</style>
+
+<script type="text/javascript">
+    async function detectAdBlock() {
+        let adBlockEnabled = false;
+        const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 3000); // 3s timeout
+
+            await fetch(new Request(googleAdUrl), { signal: controller.signal })
+                .then(() => clearTimeout(timeoutId))
+                .catch(error => {
+                    if (error.name === 'AbortError') return; // Ignore timeout errors
+                    adBlockEnabled = true;
+                });
+
+        } catch (e) {
+            adBlockEnabled = true;
+        }
+
+        if (adBlockEnabled) {
+            document.getElementById("adb").style.display = "block";
+        }
+    }
+
+    detectAdBlock();
+</script>
+</body>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+
 </html>
